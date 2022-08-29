@@ -2,8 +2,6 @@
 
 Welcome to this repository. This rep contains project files for the book - ***ROS Robotics Projects - Second edition***, published by Packt. If you already bought the book, congratulations, let's get started. If not, you could buy them from the below links :
 
-<img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781838649326-original.jpeg" alt="Book_cover"	title="Book_cover" width="320" height="380"/>
-
 - Packt : [link](https://www.packtpub.com/in/iot-hardware/ros-robotics-projects-second-edition)
 - Amazon India : [link](https://www.amazon.in/ROS-Robotics-Projects-Operating-learning-ebook/dp/B07ZRWFPHF/ref=sr_1_1?keywords=ramkumar+gandhinathan&qid=1578618609&sr=8-1)
 - Amazon US : [link](https://www.amazon.com/ROS-Robotics-Projects-Operating-learning/dp/1838649328/ref=sr_1_1?keywords=ramkumar+gandhinathan&qid=1578618675&sr=8-1)
@@ -34,3 +32,24 @@ Project files and packages for each and every chapter are named with respect to 
 
 ## Disclaimer
 *This is my first book folks, hence I'll be brutally honest with you all that there are chances of missing files, different file names or syntax errors, though they are thoroughly checked many a times, coz I'm a human too :-D. In-case you find any such troubles or problem running your project files, firstly, I'm sorry for the inconvenience. You could simply raise an issue in the issues tab such that I'll be able to track and solve the errors sytematically.*
+
+## Usage
+
+Initialize git submodules:
+
+    cd ROS-Robotics-Projects-SecondEdition
+    git submodule update --init --recursive
+    
+Change permission for python scripts:
+
+    find . -name *.py -exec chmod +x {} \;
+        
+Let git ignore permission changes within the repo:
+
+    git config core.filemode false
+    git submodule foreach --recursive git config core.filemode false
+   
+Install ROS dependency in a certain ws:
+
+    cd <certain_ws>
+    rosdep install --from-paths src --ignore-src -r -y
