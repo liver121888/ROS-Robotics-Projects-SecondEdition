@@ -1,0 +1,3 @@
+[submodule "chapter_6_ws/src/multimaster_fkie"]
+	path = chapter_6_ws/src/multimaster_fkie
+	url = git@github.com:fkie/multimaster_fkie.git
