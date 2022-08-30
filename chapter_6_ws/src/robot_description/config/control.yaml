@@ -31,7 +31,7 @@ robot_base_velocity_controller:
       has_acceleration_limits: true
       max_acceleration       : 6.0   
 
-/gazebo_ros_control:
+gazebo_ros_control:
      pid_gains:
        front_left_wheel_joint: {p: 20.0, i: 0.01, d: 0.0, i_clamp: 0.0}
        front_right_wheel_joint: {p: 20.0, i: 0.01, d: 0.0, i_clamp: 0.0}
