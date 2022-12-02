@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node name="WaiterClient" pkg="smach_example" type="waiter_robot_anology.py" output="screen"/>
+  <node name="WaiterServer" pkg="smach_example" type="waiter_robot_server.py"/>
+  <node name="SmachViewer" pkg="smach_viewer" type="smach_viewer.py"/>
+</launch>
