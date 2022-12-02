@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node name="BatterySimServer" pkg="smach_example" type="battery_sim_server.py"/>
+  <node name="BatterySimClient" pkg="smach_example" type="battery_sim_client.py"/>
+  <rosparam param="/MyRobot/BatteryStatus">0</rosparam>
+</launch>

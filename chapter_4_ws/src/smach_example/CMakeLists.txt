@@ -7,7 +7,10 @@ project(smach_example)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  actionlib_msgs
+  std_msgs
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -57,17 +60,16 @@ find_package(catkin REQUIRED)
 # )
 
 ## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
+ add_action_files(
+    DIRECTORY action
+    FILES battery_sim.action
+ )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   actionlib_msgs std_msgs  # Or other packages containing msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -102,6 +104,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES smach_example
 #  CATKIN_DEPENDS other_catkin_pkg
+  CATKIN_DEPENDS actionlib_msgs std_msgs
 #  DEPENDS system_lib
 )
 
@@ -113,7 +116,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
 # include
-# ${catkin_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
